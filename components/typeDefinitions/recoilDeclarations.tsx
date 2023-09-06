@@ -129,3 +129,18 @@ export const set2Y22 = atom({
   key: "set2y22",
   default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
 });
+
+export const set3Y22 = atom({
+  key: "set3y22",
+  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+});
+
+export const set1Y221 = atom({
+  key: "set1y221",
+  default:[{key:0,course:"TA101", value:"" ,category:"" ,credits:9, grade:"", credits_received:0, is_repeated: false,is_sx:false}]
+})
+
+export const set2Y222 = atom({
+  key: "set2y222",
+  default:[{key:0,course:"ESC111", value:"" ,category:"" ,credits:7, grade:"", credits_received:0, is_repeated: false,is_sx:false}]
+})

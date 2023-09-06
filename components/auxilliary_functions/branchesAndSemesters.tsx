@@ -10,6 +10,9 @@ import {
   set1Y22,
   set2Y22,
   allCoursesY22,
+  set3Y22,
+  set2Y222,
+  set1Y221,
 } from "../typeDefinitions/recoilDeclarations";
 import styles from "../../styles/SignupStyles.module.css";
 
@@ -20,6 +23,9 @@ export const BranchesSelect: any = () => {
   const [group, setGroup] = useRecoilState(allCoursesY22);
   const [set1, setSet1] = useRecoilState(set1Y22);
   const [set2, setSet2] = useRecoilState(set2Y22);
+  const [set3, setSet3] = useRecoilState(set3Y22);
+  const [set11, setSet11] = useRecoilState(set1Y221);
+  const [set12, setSet12] = useRecoilState(set2Y222);
   const [courseDataFetched, setCourseDataFetched] = useState(0);
 
   let group2: any = [];
@@ -79,26 +85,36 @@ export const BranchesSelect: any = () => {
   const [sem1, setSem1] = useRecoilState(Sem1Data);
   const [sem2, setSem2] = useRecoilState(Sem2Data);
   const [branch, setBranch] = useState("");
+  const [category,setCategory] = useState(0); 
   const displayTables = () => {
-    if (scount !== 0 && option !== 0) {
+    if (scount !== 0 && category !== 0) {
       if (scount >= 1) {
-        if (option === 1) {
-          setSem1(set1);
+        if (category === 1) {
+          setSem1(set11);
           setCount(1);
         } else {
-          setSem1(set2);
+          setSem1(set12);
           setCount(1);
         }
         setCount(1);
       }
       if (scount === 2) {
-        if (option === 1) {
-          setSem2(set2);
+        if (category === 1) {
+          setSem2(set11);
         } else {
-          setSem2(set1);
+          setSem2(set12);
         }
         setCount(2);
         setCount(2);
+      }
+      if (scount === 3) {
+        if (1) {
+          setSem2(set3);
+        } else {
+          setSem2(set2);
+        }
+        setCount(3);
+        setCount(3);
       }
     }
   };
@@ -112,7 +128,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(1);
+                
                 displayTables();
                 setBranch("AE");
               }}
@@ -128,7 +144,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(1);
+                
                 displayTables();
                 setBranch("BSBE");
               }}
@@ -144,7 +160,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(2);
+                
                 displayTables();
                 setBranch("CE");
               }}
@@ -160,7 +176,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(2);
+                
                 displayTables();
                 setBranch("CHE");
               }}
@@ -176,7 +192,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(1);
+                
                 displayTables();
                 setBranch("CHM");
               }}
@@ -192,7 +208,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(2);
+                
                 displayTables();
                 setBranch("CSE");
               }}
@@ -208,7 +224,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(1);
+                
                 displayTables();
                 setBranch("ECO");
               }}
@@ -224,7 +240,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(1);
+                
                 displayTables();
                 setBranch("EE");
               }}
@@ -240,7 +256,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(2);
+                
                 displayTables();
                 setBranch("ES");
               }}
@@ -256,7 +272,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(1);
+                
                 displayTables();
                 setBranch("ME");
               }}
@@ -272,7 +288,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(2);
+                
                 displayTables();
                 setBranch("MTH");
               }}
@@ -288,7 +304,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(2);
+                
                 displayTables();
                 setBranch("MSE");
               }}
@@ -304,7 +320,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(1);
+                
                 displayTables();
                 setBranch("PHY");
               }}
@@ -320,7 +336,7 @@ export const BranchesSelect: any = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                setOption(2);
+                
                 displayTables();
                 setBranch("SDS");
               }}
@@ -365,9 +381,134 @@ export const BranchesSelect: any = () => {
             </a>
           ),
         },
+        {
+          key: "3",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setSemCount(3);
+                displayTables();
+              }}
+            >
+              3rd Semester
+            </a>
+          ),
+        },
+        {
+          key: "4",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setSemCount(4);
+                displayTables();
+              }}
+            >
+              4th Semester
+            </a>
+          ),
+        },
+        {
+          key: "5",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setSemCount(5);
+                displayTables();
+              }}
+            >
+              5th Semester
+            </a>
+          ),
+        },
+        {
+          key: "6",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setSemCount(6);
+                displayTables();
+              }}
+            >
+              6th Semester
+            </a>
+          ),
+        },
+        {
+          key: "7",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setSemCount(7);
+                displayTables();
+              }}
+            >
+              7th Semester
+            </a>
+          ),
+        },
+        {
+          key: "8",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setSemCount(1);
+                displayTables();
+              }}
+            >
+              8th Semester
+            </a>
+          ),
+        },
       ]}
     />
   );
+
+  const categories = (
+    <Menu
+      items = {[
+        {
+          key: "1",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setCategory(1)
+              }}
+            >
+              TA
+            </a>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setCategory(2)
+              }}
+            >
+              ESC
+            </a>
+          ),
+        },
+      ]}
+      />
+  )
 
   return (
     <>
@@ -386,6 +527,10 @@ export const BranchesSelect: any = () => {
             {branch === "" && <>Select Branch</>}
             {branch !== "" && <>department: {branch}</>}
           </Button>
+          
+        </Dropdown>
+        <Dropdown overlay={categories} placement="bottom">
+          <Button>Category </Button>
         </Dropdown>
       </div>
       <div
