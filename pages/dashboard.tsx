@@ -17,6 +17,8 @@ import {
   MenuOutlined,
   LeftOutlined,
 } from "@ant-design/icons";
+// import {y22icon} from "y22icon"
+import y22iconsvg from "../public/y22.svg"
 import { styled, useTheme } from "@mui/material/styles";
 
 import Divider from "@mui/material/Divider";
@@ -70,6 +72,7 @@ import { ory } from "../pkg/open-source";
 import { xenon } from "../pkg/xenon";
 import { Router } from "react-router";
 import { Loader } from "../components/loader";
+import { url } from "inspector";
 
 const Dashboard: NextPage = () => {
   const router = useRouter();
@@ -487,6 +490,96 @@ const Dashboard: NextPage = () => {
               4th Semester
             </a>
           ),
+        },
+        {
+          key: "5",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setCount(5);
+                // 
+              }}
+            >
+              5th Semester
+            </a>
+          ),
+        },
+        {
+          key: "6",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setCount(6);
+                // 
+              }}
+            >
+              6th Semester
+            </a>
+          ),
+        },
+        {
+          key: "7",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setCount(7);
+                // 
+              }}
+            >
+              7th Semester
+            </a>
+          ),
+        },
+        {
+          key: "8",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setCount(8);
+                // 
+              }}
+            >
+              8th Semester
+            </a>
+          ),
+        },
+        {
+          key: "9",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setCount(9);
+                // 
+              }}
+            >
+              9th Semester
+            </a>
+          ),
+        },
+        {
+          key: "10",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setCount(10);
+                // 
+              }}
+            >
+              10th Semester
+            </a>
+          ),
         }
       ]}
     />
@@ -778,13 +871,17 @@ const Dashboard: NextPage = () => {
 
   }
   const getdatasembranchcpi=async(sem:any,branch:string)=>{
-    
+    try{
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}coursebranch/${branch}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     });
+    if (!res.ok) {
+      throw new Error(`Fetch failed with status: ${res.status}`);
+    }
+
     const data = await res.json();
     console.log(data)
     if (data){
@@ -797,6 +894,10 @@ const Dashboard: NextPage = () => {
         // semArraye[0](datagrades[sem-1]);
       }
     }
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+    
 
   }
   
@@ -883,7 +984,7 @@ const Dashboard: NextPage = () => {
             }} style={{borderBottom:"0.5px #757575 solid"}}>
               <Link href={``}>Find Status</Link>
               </Menu.Item>
-              <Menu.Item key="3" icon={<SolutionOutlined />} onClick={() => router.push("./y22")} style={{borderBottom:"0.5px #757575 solid"}}>
+              <Menu.Item key="3" icon={<y22iconsvg/>} onClick={() => router.push("./y22")} style={{borderBottom:"0.5px #757575 solid"}}>
               <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/y22`}>Y22</Link>
               </Menu.Item>
 
@@ -1019,13 +1120,14 @@ const Dashboard: NextPage = () => {
           paddingTop: "20px",}}>
         <Button onClick={()=>{
           if (cpispichooser=="SPI"){
-            console.log("spi",count,branch);
+            console.log("spi",count,branch)
+            
             getdatasembranchspi(count,branch)
           }else if(cpispichooser=="CPI"){
             console.log("cpi");
             getdatasembranchcpi(count,branch)
           }
-          }}>Display Courses</Button>
+          }}>GRADESHEET</Button>
         </div>
               <div
                 className="site-layout-background"

@@ -122,25 +122,50 @@ export const allCoursesY22 = atom({
 
 export const set1Y22 = atom({
   key: "set1y22",
-  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+  default: [{key:0,course:"TA101", value:"" ,category:"" ,credits:9, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
 });
 
 export const set2Y22 = atom({
   key: "set2y22",
-  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+  default: [{key:0,course:"ESC111", value:"" ,category:"" ,credits:7, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
 });
-
 export const set3Y22 = atom({
   key: "set3y22",
   default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
 });
-
-export const set1Y221 = atom({
-  key: "set1y221",
-  default:[{key:0,course:"TA101", value:"" ,category:"" ,credits:9, grade:"", credits_received:0, is_repeated: false,is_sx:false}]
-})
-
-export const set2Y222 = atom({
-  key: "set2y222",
-  default:[{key:0,course:"ESC111", value:"" ,category:"" ,credits:7, grade:"", credits_received:0, is_repeated: false,is_sx:false}]
-})
+// export const set1Y221 = atom({
+//   key: "set1y221",
+//   default: [{key:0,course:"TA101", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+// });
+// export const set2Y222 = atom({
+//   key: "set2y222",
+//   default: [{key:0,course:"ESC111", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+// });
+export const set4Y22 = atom({
+  key: "set4y22",
+  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+});
+export const set5Y22 = atom({
+  key: "set5y22",
+  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+});
+export const set6Y22 = atom({
+  key: "set6y22",
+  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+});
+export const set7Y22 = atom({
+  key: "set7y22",
+  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+});
+export const set8Y22 = atom({
+  key: "set8y22",
+  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+});
+export const set9Y22 = atom({
+  key: "set9y22",
+  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+});
+export const set10Y22 = atom({
+  key: "set10y22",
+  default: [{key:0,course:"", value:"" ,category:"" ,credits:0, grade:"", credits_received:0, is_repeated: false,is_sx:false}],
+});

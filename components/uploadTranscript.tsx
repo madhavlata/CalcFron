@@ -100,14 +100,23 @@ export const App: React.FC = () => {
     userId = sessiondata?.user.id;
   }
   const getCourseData = async () => {
+    try{
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}courses`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     });
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data (HTTP ${res.status})`);
+    }
     const data = await res.json();
     setjsonOfCourseCredits(data.data);
+  
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+    
   };
   if (!courseDataFetched) {
     getCourseData();
