@@ -13,7 +13,6 @@ import SPIFinder from "../components/essensial_functionality/spiFinder";
 import {
   CalculatorOutlined ,
   SolutionOutlined,
-  ApartmentOutlined,
   MenuOutlined,
   LeftOutlined,
 } from "@ant-design/icons";
@@ -43,6 +42,7 @@ import { Avatar } from "antd";
 import { recoilSessionState } from "../pkg/recoilDeclarations";
 import styles from "../styles/SignupStyles.module.css";
 import { Popover, Modal } from "antd";
+import TaskAltSharpIcon from '@mui/icons-material/TaskAltSharp';
 import {
   allSemsData,
   branche,
@@ -73,6 +73,7 @@ import { xenon } from "../pkg/xenon";
 import { Router } from "react-router";
 import { Loader } from "../components/loader";
 import { url } from "inspector";
+import Y22Icon from "./y22icon";
 
 const Dashboard: NextPage = () => {
   const router = useRouter();
@@ -977,15 +978,15 @@ const Dashboard: NextPage = () => {
             }} style={{borderBottom:"0.5px #757575 solid"}}>
                 Get SPI/CPI
               </Menu.Item>
-              <Menu.Item key="2" icon={<ApartmentOutlined /> }  onClick={() => {
+              <Menu.Item key="2" icon={<TaskAltSharpIcon /> }  onClick={() => {
               tempFunc();
               getStats(semData);
               handleClick2();
             }} style={{borderBottom:"0.5px #757575 solid"}}>
               <Link href={``}>Find Status</Link>
               </Menu.Item>
-              <Menu.Item key="3" icon={<y22iconsvg/>} onClick={() => router.push("./y22")} style={{borderBottom:"0.5px #757575 solid"}}>
-              <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/y22`}>Y22</Link>
+              <Menu.Item key="3" icon={<Y22Icon/>} onClick={() => router.push("./y22")} style={{borderBottom:"0.5px #757575 solid"}}>
+              <Link href ={`${process.env.NEXT_PUBLIC_BASE_URL}/y22`}>Y22</Link>
               </Menu.Item>
 
               
@@ -1244,4 +1245,3 @@ const Dashboard: NextPage = () => {
 };
 
 export default Dashboard;
-
